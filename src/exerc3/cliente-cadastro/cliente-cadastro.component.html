@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <h1>Cadastro de Cliente</h1>
+  
+    <form (submit)="cadastrarCliente(id.value, nome.value, email.value, idade.value)">
+      <div class="mb-3">
+        <label for="id" class="form-label">ID:</label>
+        <input type="number" class="form-control" id="id" required #id>
+      </div>
+      
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome:</label>
+        <input type="text" class="form-control" id="nome" required #nome>
+      </div>
+  
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="email" required #email>
+      </div>
+  
+      <div class="mb-3">
+        <label for="idade" class="form-label">Idade:</label>
+        <input type="number" class="form-control" id="idade" required #idade>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+  
+    <h2 class="mt-5">Clientes Cadastrados</h2>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let cliente of clientes">
+        {{ cliente.nome }} ({{ cliente.idade }} anos)
+      </li>
+    </ul>
+  </div>
+  
