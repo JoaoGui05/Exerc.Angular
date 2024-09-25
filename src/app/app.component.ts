@@ -1,13 +1,21 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'exercicios';
+  title = 'Aula3';
+  tarefas: Tarefa[] = [
+    {descricao: "Criar lista", concluida: true},
+    {descricao: "Fazer botões", concluida: true},
+    {descricao: "Criar repositório", concluida: true},
+    {descricao: "Colocar código", concluida: false},
+    {descricao: "Mandar link", concluida: false},
+  ]
+}
+interface Tarefa {
+  descricao: string;
+  concluida: boolean;
 }
